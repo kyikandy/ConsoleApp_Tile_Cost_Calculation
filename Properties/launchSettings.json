@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ConsoleApp_Tile_Cost_Calculation": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
