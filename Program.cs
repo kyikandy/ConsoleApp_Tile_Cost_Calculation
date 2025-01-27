@@ -1,21 +1,30 @@
 ﻿
-namespace ConsoleApp2_Tile_Cost_Calculation
-
+namespace ConsoleAppTileCostCalculation
+{ 
+public class Program
 {
-    internal class Program
-    {
+    // Constants defined at the class level
+    private const double SQUARE_FEET_PER_HOUR = 20;
+    private const double LABOR_COST_PER_HOUR = 86;
+
+   
         static void Main()
 
 
         {
             Console.WriteLine("Tutorial on tile cost calculation! ");
-            Console.WriteLine("Enter the shape of the room(rectangle/cirle): ");
+            Console.WriteLine("Enter the shape of the room(1:rectangle/2:cirle): ");
+            
+            Console.WriteLine("Select the shape of the room:");
+            Console.WriteLine("1. Rectangle");
+            Console.WriteLine("2. Circle");
+
 
             string? shape = Console.ReadLine()!.ToLower();
 
             double area;
 
-            if (shape == "rectangle")
+            if (shape == "1. rectangle")
             {
                 Console.WriteLine("Enter the width of the room (in feet): ");
                 double width = Convert.ToDouble(Console.ReadLine());
@@ -25,7 +34,7 @@ namespace ConsoleApp2_Tile_Cost_Calculation
                 area = width * length;
 
             }
-            else if (shape == "circle")
+            else if (shape == "2. circle")
             {
                 Console.Write("Enter the radius of the room (in feet): ");
                 double radius = Convert.ToDouble(Console.ReadLine());
@@ -47,8 +56,8 @@ namespace ConsoleApp2_Tile_Cost_Calculation
             double flooringTileCost = area * costPerUnit;
 
             // Calculate labor cost
-            double laborHours = Math.Ceiling(area / 20); // 20 square feet per hour
-            double laborCost = laborHours * 86; // $86 per hour
+            double laborHours = Math.Ceiling(area / SQUARE_FEET_PER_HOUR); // 20 square feet per hour
+            double laborCost = laborHours * LABOR_COST_PER_HOUR; // $86 per hour
 
             // Total cost
             double totalCost = flooringTileCost + laborCost;
