@@ -61,8 +61,6 @@ public class Program
             // Display results
             Console.WriteLine("\nFlooring tile cost estimate\"");
 
-
-
             Console.WriteLine("Area to be covered: {0:F2} square feet", area);
             Console.WriteLine("Cost of flooring tile: ${0:F2}", flooringTileCost);
             Console.WriteLine("Labor cost: ${0:F2}", laborCost);
