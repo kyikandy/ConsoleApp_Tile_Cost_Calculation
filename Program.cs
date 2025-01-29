@@ -6,11 +6,8 @@ public class Program
     // Constants defined at the class level
     private const double SQUARE_FEET_PER_HOUR = 20;
     private const double LABOR_COST_PER_HOUR = 86;
-
-   
+    
         static void Main()
-
-
         {
             Console.WriteLine("Tutorial on tile cost calculation! ");
             Console.WriteLine("Enter the shape of the room(1:rectangle/2:cirle): ");
@@ -19,12 +16,11 @@ public class Program
             Console.WriteLine("1. Rectangle");
             Console.WriteLine("2. Circle");
 
-
-            string? shape = Console.ReadLine()!.ToLower();
+            string? shape = Console.ReadLine()!.Trim().ToLower();
 
             double area;
 
-            if (shape == "1. rectangle")
+            if (shape == "1" || shape == "rectangle")
             {
                 Console.WriteLine("Enter the width of the room (in feet): ");
                 double width = Convert.ToDouble(Console.ReadLine());
@@ -34,7 +30,7 @@ public class Program
                 area = width * length;
 
             }
-            else if (shape == "2. circle")
+            else if (shape == "2" || shape == "circle")
             {
                 Console.Write("Enter the radius of the room (in feet): ");
                 double radius = Convert.ToDouble(Console.ReadLine());
@@ -63,7 +59,7 @@ public class Program
             double totalCost = flooringTileCost + laborCost;
 
             // Display results
-            Console.WriteLine("Flooring tile cost estimate");
+            Console.WriteLine("\nFlooring tile cost estimate\"");
 
 
 
